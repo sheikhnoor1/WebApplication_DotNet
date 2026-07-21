@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Login";
+}
+<h2>Login Page</h2>
+
+<form action="/user/login" method="post">
+<label>Username</label>
+<input type="text" name="username" placeholder="username" class="form-center"/>
+
+<label>Email</label>
+<input type="text" name="email" placeholder="email" class="form-centert"/>
+
+<label>password</label>
+<input type="number" name="password" placeholder="password" class="form-check-center"/>
+
+<br/>
+<button type="submit" class="btn btn-primary">Login</button>
+
+</form>
+
+@{
+    if (ViewBag.username != null)
+    {
+        <h3>Submitted data</h3>
+
+        <p>Username: @ViewBag.username</p>
+        <p>Email: @ViewBag.email</p>
+        <p>Password: @ViewBag.password</p>
+    }
+}
+<br/>
+<a href="/user/home">Back to Home</a>
