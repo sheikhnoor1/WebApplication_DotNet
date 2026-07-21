@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Net.Cache;
+using WebApplication_DotNet.Validations;
 
 namespace WebApplication_DotNet.Models
 {
@@ -25,8 +26,11 @@ namespace WebApplication_DotNet.Models
         [Required(ErrorMessage = "CGPA is Required")]
         [Range(0.0, 4.0, ErrorMessage ="CGPA must be between 0.0 to 4.0")]
         public double CGPA { get; set; }
-
-
+        
+        // Add this property to the Student class
+        [Required(ErrorMessage = "Date of birth is required")]
+        [MinimumAge(16)]
+        public DateTime DateOfBirth { get; set; }
 
     }
 }
